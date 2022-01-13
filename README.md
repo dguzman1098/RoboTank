@@ -1,4 +1,5 @@
-```import robocode.*;
+```package dg;
+import robocode.*;
 import java.awt.Color;
 import java.lang.Math;
 import static robocode.util.Utils.normalRelativeAngleDegrees;
@@ -23,7 +24,8 @@ public class HeroOfTime extends Robot
 		setColors(Color.green,Color.white,Color.red, Color.orange, Color.orange);
 		// Robot main loop
 		while (true) {
-			turnGunRight(22); // Scans automatically
+		
+			turnGunRight(30); // Scans automatically
 		}
 	}
 	
@@ -41,6 +43,7 @@ public class HeroOfTime extends Robot
 
 		// If it's close enough, fire!
 		if (Math.abs(bearingFromGun) <= 3) {
+			fire(1);
 			turnGunRight(bearingFromGun);
 			// We check gun heat here, because calling fire()
 			// uses a turn, which could cause us to lose track
@@ -49,10 +52,10 @@ public class HeroOfTime extends Robot
 			//power of the bullet depends on distance apart from robot
 			if (getGunHeat() == 0) {
 				if(e.getDistance() > 0 && e.getDistance() <= 125){
-					fire(3.8);
+					fire(3);
 				}
 				if(e.getDistance() > 125 && e.getDistance() <= 450){
-					fire(2);
+					fire(1.5);
 				}
 				if(e.getDistance() > 450 && e.getDistance() <= 675){
 					fire(1);
@@ -62,7 +65,6 @@ public class HeroOfTime extends Robot
 				} else {
 					fire(0.5);
 				}
-				
 				back(15);
 			}
 		} // otherwise just set the gun to turn.
@@ -93,7 +95,7 @@ public class HeroOfTime extends Robot
 		  turnRight(45);
        } else {
            ahead(90);
-		   turnRight(45);
+		   turnRight(10);
        }
 	}
 	
