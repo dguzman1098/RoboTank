@@ -20,7 +20,7 @@ public class HeroOfTime extends Robot
 		// After trying out your robot, try uncommenting the import at the top,
 		// and the next line:
 
-		setColors(Color.green,Color.black,Color.green, Color.orange, Color.orange);
+		setColors(Color.green,Color.white,Color.red, Color.orange, Color.orange);
 		// Robot main loop
 		while (true) {
 			turnGunRight(22); // Scans automatically
